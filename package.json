@@ -1,0 +1,10 @@
+{
+  "name": "sauki-data-backend",
+  "version": "1.0.0",
+  "description": "Backend for Sauki Data Links",
+  "dependencies": {
+    "node-fetch": "^2.6.9",
+    "pg": "^8.10.0",
+    "https-proxy-agent": "^5.0.1"
+  }
+}

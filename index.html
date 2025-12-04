@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="Sauki Data Links - Cheapest and Fastest Data in Nigeria.">
+  <title>Sauki Data Links - Cheapest & Fastest Data in Nigeria</title>
+  <!-- Flutterwave Script -->
+  <script src=""></script>
+  
+  <style>
+    /* SAUKI DATA - iOS-Style Premium CSS */
+    /* Ultra-minimalist, Apple Human Interface Guidelines inspired */
+
+    /* CSS Reset & Base */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      /* iOS Color Palette - Soft Neutrals */
+      --white: #FFFFFF;
+      --light-gray: #F7F7F8;
+      --medium-gray: #EDEDED;
+      --border-gray: #DADADA;
+      --dark-gray: #C7C7C7;
+      --soft-border: #D0D0D0;
+      --text-primary: #1C1C1E;
+      --text-secondary: #3C3C43;
+      --text-tertiary: #8E8E93;
+      --accent-blue: #007AFF; /* Apple Blue */
+      --accent-green: #34C759; /* Success Green */
+      --accent-red: #FF3B30; /* Error Red */
+      
+      /* Glass Effect Variables */
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-blur: blur(20px);
+      
+      /* Shadows */
+      --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+      --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --shadow-modal: 0 -4px 32px rgba(0, 0, 0, 0.12);
+      
+      /* Border Radius */
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 28px;
+      
+      /* Transitions */
+      --transition-fast: 200ms ease-out;
+      --transition-normal: 280ms ease-out;
+      --transition-slow: 350ms ease-out;
+      
+      /* Typography */
+      --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background: linear-gradient(180deg, var(--white) 0%, var(--light-gray) 100%);
+      min-height: 100vh;
+      color: var(--text-primary);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      overflow-x: hidden;
+      padding-top: 64px; /* Space for fixed navbar */
+    }
+
+    /* Subtle Background Glow */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 30% 20%, rgba(167, 179, 200, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 70% 80%, rgba(167, 179, 200, 0.05) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    /* ==================== NAVIGATION ==================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--glass-border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      transition: all var(--transition-normal);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* App-like Back Button in Navbar */
+    .nav-back-btn {
+      display: none; /* Hidden on Home by default */
+      background: none;
+      border: none;
+      padding: 8px;
+      margin-left: -8px;
+      cursor: pointer;
+      color: var(--text-primary);
+      border-radius: 50%;
+      transition: background var(--transition-fast);
+    }
+
+    .nav-back-btn:hover {
+      background: rgba(0,0,0,0.05);
+    }
+
+    /* Show back button when not on home */
+    body:not(.is-home) .nav-back-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: fadeInLeft 0.3s ease-out;
+    }
+    
+    body:not(.is-home) .nav-logo {
+      padding-left: 0;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .nav-logo svg {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+    }
+
+    .nav-logo span {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-link {
+      padding: 10px 18px;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      background: rgba(0, 0, 0, 0.04);
+      color: var(--text-primary);
+    }
+
+    .nav-link.active {
+      background: rgba(0, 0, 0, 0.06);
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-secondary);
+      border-radius: 2px;
+      transition: all var(--transition-fast);
+    }
+
+    /* ==================== SECTIONS ==================== */
+    .section {
+      display: none;
+      min-height: calc(100vh - 64px);
+      padding: 40px 24px 60px;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section-content {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ==================== HERO SECTION ==================== */
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 200px);
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      font-weight: 400;
+      color: var(--text-tertiary);
+      letter-spacing: 0.01em;
+      margin-bottom: 48px;
+      max-width: 400px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .hero-cta {
+      padding: 16px 40px;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      background: var(--white);
+      border: 1px solid var(--soft-border);
+      border-radius: var(--radius-lg);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-cta-secondary {
+      background: var(--light-gray);
+      border-color: var(--border-gray);
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+      background: var(--light-gray);
+    }
+
+    .hero-cta:active {
+      transform: translateY(0);
+    }
+
+    /* ==================== BUY DATA SECTION ==================== */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-tertiary);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .product-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+      border-color: var(--dark-gray);
+    }
+
+    .product-card:active {
+      transform: translateY(0);
+    }
+
+    .card-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-gray);
+      border-radius: var(--radius-md);
+    }
+
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--text-secondary);
+      stroke-width: 1.5;
+      fill: none;
+    }
+    
+    .product-card[data-network="giveaway"] .card-icon {
+      background: #E8F0FF; 
+      color: var(--accent-blue);
+    }
+    
+    .product-card[data-network="giveaway"] .card-icon svg {
+        stroke: var(--accent-blue);
+        fill: #007AFF; 
+        stroke-width: 1.8;
+    }
+
+    .card-title {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .card-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+    }
+    
+    .select-field-container {
+      position: relative;
+    }
+
+    .select-field {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: var(--white);
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      outline: none;
+      transition: all var(--transition-fast);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      cursor: pointer;
+    }
+    
+    .select-field:focus {
+      border-color: var(--dark-gray);
+      box-shadow: 0 0 0 3px rgba(167, 179, 200, 0.15);
+    }
+    
+    .select-field-container::after {
+        content: '⌄';
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: var(--text-tertiary);
+        font-size: 1.5rem;
+        line-height: 1;
+    }
+
+    /* ==================== CONTACT SECTION ==================== */
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-gray);
+      border-radius: var(--radius-md);
+    }
+
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--text-secondary);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .contact-info {
+      overflow: hidden;
+    }
+
+    .contact-info h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .contact-info p {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      word-break: break-all;
+    }
+
+    /* ==================== SUBSCRIBE SECTION ==================== */
+    .subscribe-container {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .input-field, .select-field {
+      width: 100%;
+      padding: 16px 20px;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: var(--white);
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+
+    .input-field::placeholder {
+      color: var(--text-tertiary);
+    }
+
+    .input-field:focus {
+      border-color: var(--dark-gray);
+      box-shadow: 0 0 0 3px rgba(167, 179, 200, 0.15);
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 4px;
+      cursor: pointer;
+    }
+
+    .checkbox-input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .checkbox-label {
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+
+    .subscribe-note {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+
+    /* ==================== BUTTONS ==================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: var(--white);
+      border: 1px solid var(--soft-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background: var(--light-gray);
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: var(--text-primary);
+      color: var(--white);
+      border-color: var(--text-primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--text-secondary);
+    }
+    
+    /* Flutterwave Button Style */
+    .btn-flutterwave {
+      background: #f5a623; /* Flutterwave Orange-Gold */
+      color: #000;
+      border: none;
+      font-weight: 600;
+    }
+    
+    .btn-flutterwave:hover {
+        background: #e09612;
+    }
+    
+    .btn-accent {
+        background: var(--accent-blue);
+        color: var(--white);
+        border-color: var(--accent-blue);
+    }
+    
+    .btn-accent:hover {
+        background: #0066CC;
+    }
+
+    .btn-danger {
+      background: var(--accent-red);
+      color: var(--white);
+      border-color: var(--accent-red);
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(0,0,0,0.3);
+      border-radius: 50%;
+      border-top-color: #000;
+      animation: spin 0.8s linear infinite;
+      display: none;
+      margin-left: 10px;
+    }
+
+    .btn.loading .spinner {
+      display: block;
+    }
+    
+    /* Center Spinner for Modal Processing */
+    .spinner-center {
+        display: block;
+        margin: 0 auto 16px;
+        width: 40px;
+        height: 40px;
+        border-width: 3px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Ripple Effect */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.1);
+      transform: scale(0);
+      animation: ripple-animation 600ms ease-out;
+      pointer-events: none;
+    }
+    
+    .btn-accent .ripple, .btn-primary .ripple {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes ripple-animation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* ==================== MODALS (iOS Bottom Sheets) ==================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-sheet {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 2001;
+      transform: translateY(100%);
+      transition: transform var(--transition-slow);
+      box-shadow: var(--shadow-modal);
+      max-width: 600px;
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      right: auto;
+    }
+    
+    @media (max-width: 600px) {
+        .modal-sheet {
+            left: 0;
+            right: 0;
+            max-width: none;
+            transform: translateY(100%);
+        }
+        .modal-overlay.active .modal-sheet {
+            transform: translateY(0);
+        }
+    }
+
+    .modal-overlay.active .modal-sheet {
+      transform: translateX(-50%) translateY(0);
+    }
+    
+    @media (max-width: 600px) {
+        .modal-overlay.active .modal-sheet {
+            transform: translateY(0);
+        }
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--medium-gray);
+      min-height: 64px;
+      z-index: 10;
+    }
+
+    .modal-handle {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 4px;
+      background: var(--dark-gray);
+      border-radius: 3px;
+    }
+
+    .modal-title-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .modal-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .modal-btn-container {
+      width: 40px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-btn-container.left {
+      justify-content: flex-start;
+    }
+
+    .modal-btn-container.right {
+      justify-content: flex-end;
+    }
+
+    .modal-close, .modal-back {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-gray);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .modal-back {
+      display: none;
+    }
+    
+    .has-history .modal-back {
+      display: flex;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    .modal-close:hover, .modal-back:hover {
+      background: var(--medium-gray);
+    }
+
+    .modal-close svg, .modal-back svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-secondary);
+      stroke-width: 2;
+    }
+
+    .modal-body {
+      padding: 24px;
+      padding-bottom: 48px;
+    }
+
+    /* ==================== PLAN CARDS ==================== */
+    .plans-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .plan-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      background: var(--light-gray);
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .plan-card:hover {
+      background: var(--medium-gray);
+      transform: translateY(-1px);
+    }
+
+    .plan-info h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .plan-info p {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+    }
+
+    .plan-price {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* ==================== PAYMENT INSTRUCTIONS ==================== */
+    .payment-details {
+      background: var(--light-gray);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .payment-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .payment-row:last-child {
+      border-bottom: none;
+    }
+
+    .payment-row label {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+    }
+
+    .payment-row span {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .payment-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* ==================== ORDER FORM ==================== */
+    .order-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .form-group .readonly-field {
+      padding: 16px 20px;
+      background: var(--light-gray);
+      border: 1px solid var(--border-gray);
+      border-radius: var(--radius-md);
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    /* ==================== ORDER PREVIEW ==================== */
+    .preview-card {
+      background: var(--light-gray);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .preview-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-gray);
+    }
+
+    .preview-row:last-child {
+      border-bottom: none;
+    }
+
+    .preview-row label {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+    }
+
+    .preview-row span {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-align: right;
+    }
+
+    /* ==================== TOAST NOTIFICATION ==================== */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--text-primary);
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: var(--radius-md);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      z-index: 3000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+      box-shadow: var(--shadow-medium);
+      width: max-content;
+      max-width: 90%;
+      text-align: center;
+    }
+
+    .toast.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ==================== FOOTER ==================== */
+    .footer {
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 1px solid var(--medium-gray);
+      margin-top: 60px;
+    }
+
+    .footer p {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      letter-spacing: 0.01em;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0 16px;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        flex-direction: column;
+        padding: 16px;
+        gap: 4px;
+        border-bottom: 1px solid var(--border-gray);
+        box-shadow: var(--shadow-medium);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+      }
+      
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+      
+      .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: 14px 18px;
+      }
+      
+      .menu-toggle {
+        display: flex;
+      }
+      
+      .section {
+        padding: 40px 16px 40px;
+      }
+      
+      .hero-section {
+        min-height: calc(100vh - 120px);
+      }
+      
+      .hero-subtitle {
+        margin-bottom: 36px;
+      }
+      
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .contact-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .modal-sheet {
+        max-height: 92vh;
+      }
+      
+      .modal-body {
+        padding: 20px 16px;
+      }
+    }
+    
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn var(--transition-normal) ease-out forwards;
+    }
+
+    /* Staggered animations for cards */
+    .cards-grid .product-card:nth-child(1) { animation-delay: 0ms; }
+    .cards-grid .product-card:nth-child(2) { animation-delay: 50ms; }
+    .cards-grid .product-card:nth-child(3) { animation-delay: 100ms; }
+    .cards-grid .product-card:nth-child(4) { animation-delay: 150ms; }
+
+    .contact-cards .contact-card:nth-child(1) { animation-delay: 0ms; }
+    .contact-cards .contact-card:nth-child(2) { animation-delay: 50ms; }
+    .contact-cards .contact-card:nth-child(3) { animation-delay: 100ms; }
+
+    /* Smooth scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--light-gray);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--dark-gray);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-tertiary);
+    }
+  </style>
+</head>
+<body class="is-home">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <!-- Back Navigation Button -->
+      <button class="nav-back-btn" id="nav-back-btn" aria-label="Go Back">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      
+      <a href="#" class="nav-logo" data-section="home">
+        <!-- Replaced external logo.png with inline SVG -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        <span>Sauki Data</span>
+      </a>
+    </div>
+    
+    <button class="menu-toggle" aria-label="Toggle menu" data-testid="button-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <div class="nav-links">
+      <a href="#" class="nav-link active" data-section="home" data-testid="nav-home">Home</a>
+      <a href="#" class="nav-link" data-section="buy-data" data-testid="nav-buy-data">Buy Data</a>
+      <a href="#" class="nav-link" data-section="contact" data-testid="nav-contact">Contact</a>
+      <a href="#" class="nav-link" data-section="subscribe" data-testid="nav-subscribe">Subscribe</a>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="section active">
+    <div class="section-content hero-section">
+      <h1 class="hero-title">Sauki Data Links</h1>
+      <p class="hero-subtitle">Cheapest & Fastest Data in Nigeria</p>
+      <div class="hero-buttons">
+        <button class="hero-cta" data-section="buy-data" data-testid="button-buy-data">
+          Buy Data
+        </button>
+        <button class="hero-cta hero-cta-secondary" data-section="contact" data-testid="button-contact-us">
+          Contact Us
+        </button>
+        <button class="hero-cta hero-cta-secondary" data-section="subscribe" data-testid="button-subscribe">
+          Subscribe
+        </button>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Powered by Sauki Data Links Inc. &bull; Developed by Abdallah Nangere &copy; 2025</p>
+    </footer>
+  </section>
+
+  <!-- Buy Data Section -->
+  <section id="buy-data" class="section">
+    <div class="section-content">
+      <h2 class="section-title">Buy Data</h2>
+      <p class="section-subtitle">Select your network provider or enter the giveaway</p>
+      
+      <div class="cards-grid">
+        <!-- MTN Card -->
+        <div class="product-card fade-in" data-network="mtn" data-testid="card-mtn">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <path d="M9 12h6M12 9v6"/>
+            </svg>
+          </div>
+          <h3 class="card-title">MTN Products</h3>
+          <p class="card-subtitle">1GB - 10GB Plans</p>
+        </div>
+        
+        <!-- Airtel Card -->
+        <div class="product-card fade-in" data-network="airtel" data-testid="card-airtel">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 8v4l2 2"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Airtel Products</h3>
+          <p class="card-subtitle">Coming Soon (WhatsApp)</p>
+        </div>
+        
+        <!-- Glo Card -->
+        <div class="product-card fade-in" data-network="glo" data-testid="card-glo">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Glo Products</h3>
+          <p class="card-subtitle">1GB - 10GB Plans</p>
+        </div>
+        
+        <!-- GIVEAWAY Menu Card -->
+        <div class="product-card fade-in" data-network="giveaway" data-testid="card-giveaway">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="card-title">GIVEAWAY Menu</h3>
+          <p class="card-subtitle">Win Free Data!</p>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Powered by Sauki Data Links Inc. &bull; Developed by Abdallah Nangere &copy; 2025</p>
+    </footer>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="section-content">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">We're here to help</p>
+      
+      <div class="contact-cards">
+        <!-- WhatsApp -->
+        <div class="contact-card fade-in" id="contact-whatsapp" data-testid="contact-whatsapp">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <h3>WhatsApp</h3>
+            <p>Chat with us instantly</p>
+          </div>
+        </div>
+        
+        <!-- Phone -->
+        <div class="contact-card fade-in" id="contact-phone" data-testid="contact-phone">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <h3>Phone</h3>
+            <p>08164135836</p>
+          </div>
+        </div>
+        
+        <!-- Email -->
+        <div class="contact-card fade-in" id="contact-email" data-testid="contact-email">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <h3>Email</h3>
+            <p>saukidatalinks@gmail.com</p>
+          </div>
+        </div>
+        
+        <!-- Social -->
+        <div class="contact-card fade-in" data-testid="contact-social">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <h3>Social</h3>
+            <p>@SaukiDataLinks</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Powered by Sauki Data Links Inc. &bull; Developed by Abdallah Nangere &copy; 2025</p>
+    </footer>
+  </section>
+
+  <!-- Subscribe Section -->
+  <section id="subscribe" class="section">
+    <div class="section-content">
+      <div class="subscribe-container">
+        <h2 class="section-title">Subscribe for Updates</h2>
+        <p class="section-subtitle">Get notified about our latest offers</p>
+        
+        <div class="subscribe-form">
+          <input 
+            type="tel" 
+            class="input-field" 
+            id="subscribe-phone" 
+            placeholder="Enter your phone number (optional)"
+            data-testid="input-subscribe-phone"
+          >
+          <button class="btn btn-primary btn-full" id="subscribe-btn" data-testid="button-subscribe">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+            </svg>
+            Subscribe via WhatsApp
+          </button>
+        </div>
+        
+        <p class="subscribe-note">
+          Please save our number <strong>08164135836</strong> to receive alerts and updates about our latest data offers.
+        </p>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>Powered by Sauki Data Links Inc. &bull; Developed by Abdallah Nangere &copy; 2025</p>
+    </footer>
+  </section>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <div class="modal-btn-container left">
+          <button class="modal-back" id="modal-back-btn" aria-label="Go Back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="modal-title-container">
+          <h2 class="modal-title" id="modal-title">Modal Title</h2>
+        </div>
+        
+        <div class="modal-btn-container right">
+          <button class="modal-close" aria-label="Close modal" data-testid="button-modal-close">
+            <svg viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Dynamic content injected by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="polite" data-testid="toast-notification">
+    Notification message
+  </div>
+
+  <script>
+    // SAUKI DATA - iOS-Style Premium JavaScript
+    
+    // ==================== CONFIG ====================
+    const FLW_PUBLIC_KEY = "FLWPUBK-6f70b3b654f142ff792f97ec780be79f-X";
+
+    // ==================== DATA ====================
+    const dataPlans = {
+      mtn: {
+        name: 'MTN Products',
+        plans: [
+          { id: 'mtn-1gb', name: '1GB Data', duration: '30 days', price: 500 },
+          { id: 'mtn-2gb', name: '2GB Data', duration: '30 days', price: 1000 },
+          { id: 'mtn-5gb', name: '5GB Data', duration: '30 days', price: 2000 },
+          { id: 'mtn-10gb', name: '10GB Data', duration: '30 days', price: 4000 }
+        ]
+      },
+      airtel: {
+        name: 'Airtel Products',
+        plans: [
+          { id: 'airtel-10gb', name: '10GB Data', duration: '30 days', price: 4000 },
+          { id: 'airtel-25gb', name: '25GB Data', duration: '30 days', price: 10000 }
+        ]
+      },
+      glo: {
+        name: 'Glo Products',
+        plans: [
+          { id: 'glo-1gb', name: '1GB Data', duration: '30 days', price: 500 },
+          { id: 'glo-5gb', name: '5GB Data', duration: '30 days', price: 2500 },
+          { id: 'glo-10gb', name: '10GB Data', duration: '30 days', price: 4000 }
+        ]
+      }
+    };
+    
+    const giveawayData = {
+        networks: ['MTN', 'Airtel', 'Glo', '9mobile'],
+        whatsappMessageTemplate: (phone, network, key) => `Hello Sauki Data Links, I'd like to participate in the Data Giveaway!
+
+Phone Number: ${phone}
+Network: ${network}
+Giveaway Key: ${key}
+
+Please add me to the raffle! Good luck to me! 🎉`
+    };
+
+    const whatsappNumber = '2348164135836';
+    const emailAddress = 'saukidatalinks@gmail.com';
+
+    // ==================== STATE ====================
+    let currentSection = 'home';
+    let selectedPlan = null;
+    let orderDetails = {};
+    let modalStack = []; 
+
+    // ==================== DOM ELEMENTS ====================
+    let elements = {};
+
+    // ==================== INITIALIZATION ====================
+    document.addEventListener('DOMContentLoaded', () => {
+      elements = {
+        navLinks: document.querySelectorAll('.nav-link'),
+        sections: document.querySelectorAll('.section'),
+        menuToggle: document.querySelector('.menu-toggle'),
+        navLinksContainer: document.querySelector('.nav-links'),
+        modalOverlay: document.getElementById('modal-overlay'),
+        toast: document.getElementById('toast'),
+        navBackBtn: document.getElementById('nav-back-btn'),
+        modalBackBtn: document.getElementById('modal-back-btn')
+      };
+
+      initNavigation();
+      initProductCards();
+      initButtons();
+      showSection('home');
+    });
+
+    // ==================== NAVIGATION ====================
+    function initNavigation() {
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const section = link.dataset.section;
+          showSection(section);
+          closeMobileMenu();
+        });
+      });
+      
+      document.querySelector('.nav-logo').addEventListener('click', (e) => {
+        e.preventDefault();
+        showSection('home');
+      });
+
+      if (elements.menuToggle) {
+        elements.menuToggle.addEventListener('click', toggleMobileMenu);
+      }
+
+      if (elements.navBackBtn) {
+        elements.navBackBtn.addEventListener('click', () => {
+          showSection('home');
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar') && elements.navLinksContainer.classList.contains('active')) {
+          closeMobileMenu();
+        }
+      });
+    }
+
+    function showSection(sectionId) {
+      currentSection = sectionId;
+      
+      if (sectionId === 'home') {
+        document.body.classList.add('is-home');
+      } else {
+        document.body.classList.remove('is-home');
+      }
+      
+      elements.sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      
+      elements.navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.dataset.section === sectionId) {
+          link.classList.add('active');
+        }
+      });
+      
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) {
+        setTimeout(() => {
+          targetSection.classList.add('active');
+        }, 50);
+      }
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      elements.navLinksContainer.classList.toggle('active');
+      elements.menuToggle.classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      elements.navLinksContainer.classList.remove('active');
+      elements.menuToggle.classList.remove('active');
+    }
+
+    // ==================== PRODUCT CARDS ====================
+    function initProductCards() {
+      const productCards = document.querySelectorAll('.product-card');
+      productCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const network = card.dataset.network;
+          
+          if (network === 'giveaway') {
+              modalStack = []; 
+              openGiveawayForm();
+          } else if (network === 'airtel') {
+            showToast('Airtel purchases are processed via WhatsApp currently.');
+            setTimeout(() => {
+                const message = encodeURIComponent('Hello Sauki Data, I want to buy Airtel Data.');
+                window.open(`${whatsappNumber}?text=${message}`, '_blank');
+            }, 1000);
+          } else if (network && dataPlans[network]) {
+            modalStack = []; 
+            openPlansModal(network);
+          }
+        });
+      });
+    }
+
+    // ==================== MODAL HISTORY SYSTEM ====================
+    function pushModalHistory() {
+      const body = document.getElementById('modal-body').innerHTML;
+      const title = document.getElementById('modal-title').textContent;
+      modalStack.push({ body, title });
+      updateModalBackBtn();
+    }
+
+    function popModalHistory() {
+      if (modalStack.length === 0) return;
+      
+      const prev = modalStack.pop();
+      document.getElementById('modal-body').innerHTML = prev.body;
+      document.getElementById('modal-title').textContent = prev.title;
+      
+      initModalButtons(); 
+      updateModalBackBtn();
+    }
+
+    function updateModalBackBtn() {
+      const modalOverlay = document.getElementById('modal-overlay');
+      if (modalStack.length > 0) {
+        modalOverlay.classList.add('has-history');
+      } else {
+        modalOverlay.classList.remove('has-history');
+      }
+    }
+
+    // ==================== MODALS ====================
+    function openModal(content) {
+      const modalBody = document.getElementById('modal-body');
+      const modalTitle = document.getElementById('modal-title');
+      
+      modalBody.innerHTML = content.body;
+      modalTitle.textContent = content.title;
+      
+      updateModalBackBtn();
+      
+      elements.modalOverlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      
+      initModalButtons();
+    }
+
+    function closeModal() {
+      elements.modalOverlay.classList.remove('active');
+      elements.modalOverlay.classList.remove('has-history');
+      document.body.style.overflow = '';
+      modalStack = []; 
+    }
+
+    function initModalButtons() {
+      const closeBtn = document.querySelector('.modal-close');
+      if (closeBtn) {
+        const newBtn = closeBtn.cloneNode(true);
+        closeBtn.parentNode.replaceChild(newBtn, closeBtn);
+        newBtn.addEventListener('click', closeModal);
+      }
+
+      const backBtn = document.getElementById('modal-back-btn');
+      if (backBtn) {
+        const newBack = backBtn.cloneNode(true);
+        backBtn.parentNode.replaceChild(newBack, backBtn);
+        newBack.addEventListener('click', popModalHistory);
+      }
+      
+      const planCards = document.querySelectorAll('.plan-card');
+      planCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const planId = card.dataset.planId;
+          const networkKey = card.dataset.network;
+          selectPlan(networkKey, planId);
+        });
+      });
+      
+      const payBtn = document.getElementById('pay-btn');
+      if (payBtn) {
+        payBtn.addEventListener('click', payWithFlutterwave);
+      }
+      
+      const giveawaySubmitBtn = document.getElementById('giveaway-submit-btn');
+      if (giveawaySubmitBtn) {
+          const newBtn = giveawaySubmitBtn.cloneNode(true);
+          giveawaySubmitBtn.parentNode.replaceChild(newBtn, giveawaySubmitBtn);
+          newBtn.addEventListener('click', handleGiveawaySubmission);
+      }
+      
+      const buttons = document.querySelectorAll('.modal-body .btn');
+      buttons.forEach(btn => {
+        btn.addEventListener('click', createRipple);
+      });
+    }
+
+    // ==================== PLANS MODAL ====================
+    function openPlansModal(networkKey) {
+      const network = dataPlans[networkKey];
+      
+      let plansHTML = network.plans.map(plan => `
+        <div class="plan-card fade-in" data-plan-id="${plan.id}" data-network="${networkKey}">
+          <div class="plan-info">
+            <h4>${plan.name}</h4>
+            <p>Valid for ${plan.duration}</p>
+          </div>
+          <div class="plan-price">${formatPrice(plan.price)}</div>
+        </div>
+      `).join('');
+      
+      openModal({
+        title: network.name,
+        body: `<div class="plans-list">${plansHTML}</div>`
+      });
+    }
+
+    function selectPlan(networkKey, planId) {
+      const network = dataPlans[networkKey];
+      const plan = network.plans.find(p => p.id === planId);
+      
+      if (plan) {
+        selectedPlan = {
+          networkKey: networkKey, 
+          networkName: network.name,
+          ...plan
+        };
+        pushModalHistory();
+        openOrderForm();
+      }
+    }
+
+    // ==================== ORDER FORM (Payment) ====================
+    function openOrderForm() {
+      const content = `
+        <form class="order-form" id="order-form">
+          <div class="form-group">
+            <label>Product</label>
+            <div class="readonly-field">${selectedPlan.networkName} - ${selectedPlan.name}</div>
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <div class="readonly-field">${formatPrice(selectedPlan.price)}</div>
+          </div>
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" class="input-field" id="customer-name" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Beneficiary Phone Number</label>
+            <input type="tel" class="input-field" id="phone-number" placeholder="Enter phone number" required>
+          </div>
+          
+          <div class="checkbox-container">
+            <input type="checkbox" id="is-ported" class="checkbox-input" checked>
+            <label for="is-ported" class="checkbox-label">Is this a ported number?</label>
+          </div>
+
+          <button type="button" class="btn btn-flutterwave btn-full" id="pay-btn">
+            Pay ${formatPrice(selectedPlan.price)} via Transfer
+          </button>
+        </form>
+      `;
+      
+      openModal({
+        title: 'Order Details',
+        body: content
+      });
+    }
+
+    // ==================== FLUTTERWAVE PAYMENT ====================
+    function payWithFlutterwave() {
+        const nameInput = document.getElementById('customer-name');
+        const phoneInput = document.getElementById('phone-number');
+        const portedInput = document.getElementById('is-ported');
+        
+        const name = nameInput.value.trim();
+        const phone = phoneInput.value.trim();
+        const isPorted = portedInput.checked;
+        
+        if (!name) { showToast('Please enter your name'); return; }
+        if (!validateNigerianPhone(phone)) { showToast('Invalid Phone Number'); return; }
+
+        // Save for later
+        orderDetails = {
+            name, 
+            phone: formatPhoneNumber(phone), 
+            isPorted,
+            networkKey: selectedPlan.networkKey,
+            planId: selectedPlan.id
+        };
+
+        FlutterwaveCheckout({
+            public_key: FLW_PUBLIC_KEY,
+            tx_ref: "SAUKI-" + Date.now() + "-" + Math.floor(Math.random() * 1000),
+            amount: selectedPlan.price,
+            currency: "NGN",
+            payment_options: "banktransfer", 
+            customer: {
+                email: "aaunangere@gmail.com", 
+                phone_number: phone,
+                name: name,
+            },
+            customizations: {
+                title: "Abdullahi Adam Usman",
+                description: `Purchase ${selectedPlan.name}`,
+                logo: "",
+            },
+            callback: function (data) {
+                console.log("Payment success:", data);
+                closeModal();
+                verifyAndDispense(data.transaction_id, data.tx_ref);
+            },
+            onclose: function() {
+                // do nothing
+            }
+        });
+    }
+
+    // ==================== BACKEND VERIFICATION ====================
+    async function verifyAndDispense(transactionId, txRef) {
+        // Show Processing Modal
+        openModal({
+            title: "Processing Order", 
+            body: `
+                <div style='text-align:center; padding: 20px 0;'>
+                    <div class='spinner spinner-center'></div>
+                    <h3>Verifying Payment...</h3>
+                    <p style="color:var(--text-tertiary);">Please do not close this window.</p>
+                </div>
+            `
+        });
+
+        try {
+            const response = await fetch('/.netlify/functions/purchase', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    transaction_id: transactionId,
+                    tx_ref: txRef,
+                    mobile_number: orderDetails.phone,
+                    network: orderDetails.networkKey,
+                    plan_id: orderDetails.planId,
+                    ported: orderDetails.isPorted
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                // SUCCESS
+                const successContent = `
+                    <div style="text-align: center; padding: 20px 0;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent-green)" stroke-width="2" style="margin-bottom: 16px;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Success!</h3>
+                        <p style="color: var(--text-tertiary); margin-bottom: 24px;">${result.message}</p>
+                        <button class="btn btn-primary btn-full" onclick="closeModal()">Close</button>
+                    </div>
+                `;
+                modalStack = [];
+                openModal({ title: 'Order Complete', body: successContent });
+            } else {
+                // ERROR
+                const errorContent = `
+                    <div style="text-align: center; padding: 20px 0;">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--accent-red)" stroke-width="2" style="margin-bottom: 16px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Failed</h3>
+                        <p style="color: var(--text-tertiary); margin-bottom: 24px;">${result.error}</p>
+                        <button class="btn btn-primary btn-full" onclick="closeModal()">Close</button>
+                    </div>
+                `;
+                modalStack = [];
+                openModal({ title: 'Transaction Failed', body: errorContent });
+            }
+        } catch (e) {
+            const networkError = `
+                <div style="text-align: center; padding: 20px 0;">
+                    <h3 style="margin-bottom: 8px;">Network Error</h3>
+                    <p style="color: var(--text-tertiary); margin-bottom: 24px;">Please contact admin with your Transaction ID: ${transactionId}</p>
+                    <button class="btn btn-primary btn-full" onclick="closeModal()">Close</button>
+                </div>
+            `;
+            modalStack = [];
+            openModal({ title: 'Error', body: networkError });
+        }
+    }
+
+    // ==================== GIVEAWAY MODAL ====================
+    function openGiveawayForm() {
+        const networkOptions = giveawayData.networks.map(net => 
+            `<option value="${net}">${net}</option>`
+        ).join('');
+        
+        const content = `
+            <p style="text-align: center; margin-bottom: 24px; color: var(--text-secondary);">Enter your details below to participate in our random data giveaway!</p>
+            <form class="order-form" id="giveaway-form">
+              <div class="form-group">
+                <label for="giveaway-phone">Enter your Phone Number (Mandatory)</label>
+                <input type="tel" class="input-field" id="giveaway-phone" placeholder="e.g. 08012345678" required>
+              </div>
+              <div class="form-group">
+                <label for="giveaway-network">Select your Network (Mandatory)</label>
+                <div class="select-field-container">
+                    <select class="select-field" id="giveaway-network" required>
+                      <option value="" disabled selected>-- Select Network --</option>
+                      ${networkOptions}
+                    </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="giveaway-key">Enter Giveaway Key (Mandatory)</label>
+                <input type="text" class="input-field" id="giveaway-key" placeholder="e.g. SAUKI2025" required>
+              </div>
+              <button type="button" class="btn btn-accent btn-full" id="giveaway-submit-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 20V10"/>
+                    <path d="M12 10l4 4m-4-4l-4 4"/>
+                    <circle cx="12" cy="12" r="10"/>
+                </svg>
+                Enter Giveaway
+              </button>
+            </form>
+        `;
+        
+        openModal({
+            title: '🎁 Data Giveaway Entry',
+            body: content
+        });
+    }
+
+    function handleGiveawaySubmission() {
+        const phoneInput = document.getElementById('giveaway-phone');
+        const networkSelect = document.getElementById('giveaway-network');
+        const keyInput = document.getElementById('giveaway-key');
+        
+        const phone = phoneInput.value.trim();
+        const network = networkSelect.value;
+        const key = keyInput.value.trim(); 
+        
+        if (!validateNigerianPhone(phone)) {
+            showToast('Please enter a valid Nigerian phone number');
+            phoneInput.focus();
+            return;
+        }
+        
+        if (!network) {
+            showToast('Please select your network');
+            networkSelect.focus();
+            return;
+        }
+
+        if (!key) {
+            showToast('The Giveaway Key is mandatory');
+            keyInput.focus();
+            return;
+        }
+        
+        const formattedPhone = formatPhoneNumber(phone);
+        const message = giveawayData.whatsappMessageTemplate(formattedPhone, network, key);
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `${whatsappNumber}?text=${encodedMessage}`;
+        
+        window.open(whatsappURL, '_blank');
+        closeModal();
+        showToast('Opening WhatsApp to complete your entry...');
+    }
+
+    // ==================== UTILITIES ====================
+    function validateNigerianPhone(phone) {
+      const cleaned = phone.replace(/[\s-]/g, '');
+      const pattern = /^(0[789][01]\d{8}|(\+?234)[789][01]\d{8})$/;
+      return pattern.test(cleaned);
+    }
+
+    function formatPhoneNumber(phone) {
+      const cleaned = phone.replace(/[\s-]/g, '');
+      if (cleaned.startsWith('+234')) return cleaned;
+      if (cleaned.startsWith('234')) return '+' + cleaned;
+      if (cleaned.startsWith('0')) return '+234' + cleaned.substring(1);
+      return cleaned;
+    }
+
+    function formatPrice(amount) {
+      return new Intl.NumberFormat('en-NG', {
+        style: 'currency',
+        currency: 'NGN',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(amount).replace('NGN', '\u20A6');
+    }
+
+    function showToast(message) {
+      const toast = elements.toast;
+      toast.textContent = message;
+      toast.classList.add('active');
+      
+      setTimeout(() => {
+        toast.classList.remove('active');
+      }, 3500);
+    }
+
+    function createRipple(e) {
+      const button = e.currentTarget;
+      const rect = button.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+      
+      button.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+        if (button.type !== 'submit') e.stopPropagation(); 
+      }, 600);
+    }
+
+    // ==================== BUTTON INITIALIZATION ====================
+    function initButtons() {
+      document.querySelectorAll('.hero-cta[data-section]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const section = btn.getAttribute('data-section');
+          showSection(section);
+        });
+      });
+      
+      const subscribeBtn = document.getElementById('subscribe-btn');
+      if (subscribeBtn) {
+        subscribeBtn.addEventListener('click', subscribeViaWhatsApp);
+      }
+      
+      const whatsappContact = document.getElementById('contact-whatsapp');
+      if (whatsappContact) {
+        whatsappContact.addEventListener('click', openWhatsAppChat);
+      }
+      
+      const phoneContact = document.getElementById('contact-phone');
+      if (phoneContact) {
+        phoneContact.addEventListener('click', callPhone);
+      }
+      
+      const emailContact = document.getElementById('contact-email');
+      if (emailContact) {
+        emailContact.addEventListener('click', sendEmail);
+      }
+      
+      if (elements.modalOverlay) {
+        elements.modalOverlay.addEventListener('click', (e) => {
+          if (e.target === elements.modalOverlay) {
+            closeModal();
+          }
+        });
+      }
+      
+      document.querySelectorAll('.btn, .hero-cta').forEach(btn => {
+        btn.addEventListener('click', createRipple);
+      });
+    }
+
+    function subscribeViaWhatsApp() {
+      const phoneInput = document.getElementById('subscribe-phone');
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      
+      if (phone && !validateNigerianPhone(phone)) {
+        showToast('Please enter a valid phone number');
+        return;
+      }
+      
+      const message = phone 
+        ? `Hello Sauki Data Links, I would like to subscribe for updates. My phone number is ${formatPhoneNumber(phone)}.`
+        : `Hello Sauki Data Links, I would like to subscribe for updates.`;
+      
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `${whatsappNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+      showToast('Opening WhatsApp...');
+    }
+    
+    function openWhatsAppChat() {
+      const message = 'Hello Sauki Data Links, I have an inquiry.';
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `${whatsappNumber}?text=${encodedMessage}`;
+      window.open(whatsappURL, '_blank');
+    }
+
+    function callPhone() {
+      window.location.href = `tel:+${whatsappNumber}`;
+    }
+
+    function sendEmail() {
+      window.location.href = `mailto:${emailAddress}?subject=Inquiry`;
+    }
+
+    // ==================== KEYBOARD NAVIGATION ====================
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && elements.modalOverlay.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
